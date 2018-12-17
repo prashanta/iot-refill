@@ -16,7 +16,7 @@ services:
         volumes:
             - mongo-db:/data
     mqtt:
-        image: eclipse-mosquitto:latest
+        image: panuwitp/mosquitto-arm
         container_name: "mqtt"
         expose:
             - 1883
