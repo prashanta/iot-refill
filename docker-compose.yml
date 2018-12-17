@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
     app:
@@ -9,12 +9,12 @@ services:
     mongo:
         image: mongo:latest
         container_name: "db"
-        volumes:
-            - ./data/mongodb/db:/data/db
         expose:
             - 27017
         ports:
             - 27017:27017
+        volumes:
+            - mongo-db:/data
     mqtt:
         image: eclipse-mosquitto:latest
         container_name: "mqtt"
@@ -22,3 +22,5 @@ services:
             - 1883
         ports:
           - "1883:1883"
+volumes:
+  mongo-db:
