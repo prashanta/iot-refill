@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+    app:
+        build: ./node
+        container_name: "app"
+        expose:
+            - 3000
+    mongo:
+        image: mongo:latest
+        container_name: "db"
+        volumes:
+            - ./data/mongodb/db:/data/db
+        expose:
+            - 27017
+        ports:
+            - 27017:27017
+        volumes:
+            - mongo-db:/data
+    mqtt:
+        image: eclipse-mosquitto:latest
+        container_name: "mqtt"
+        expose:
+            - 1883
+        ports:
+          - "1883:1883"
+volumes:
+  mongo-db:

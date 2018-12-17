@@ -1,0 +1,23 @@
+<H3> Devices </H3>
+<hr>
+
+{{#if devices}}
+    <table class="table">
+        <tr>
+            <th>Device Name</th>
+            <th>Device Id</th>
+            <th>Device Type</th>
+            <th>Refill Setpoint</th>
+        </tr>
+        {{#each devices}}
+            <tr>
+                <td>{{deviceName}}</td>
+                <td>{{deviceId}}</td>
+                <td>{{dType}}</td>
+                <td>{{refillSetpoint}}</td>
+            </tr>
+        {{/each}}
+    </table>
+{{else}}
+    <h4>No devices yet.</h4>
+{{/if}}
