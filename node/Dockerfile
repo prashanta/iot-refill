@@ -1,4 +1,4 @@
-resin/raspberry-pi-node:6-slim
+FROM resin/raspberry-pi-node:6-slim
 
 WORKDIR /usr/src/app
 
