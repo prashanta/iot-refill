@@ -3,7 +3,7 @@ var path = require('path'),
 
 var config = {
     root: rootPath,
-    port: 3000,
+    port: 80,
 };
 
 module.exports = config;
