@@ -13,8 +13,6 @@ services:
             - 27017
         ports:
             - 27017:27017
-        volumes:
-            - ./data:/data/db
     mqtt:
         image: panuwitp/mosquitto-arm
         container_name: "mqtt"
