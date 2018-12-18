@@ -5,7 +5,10 @@ A module that provides MQTT functionalities.
 var mqtt    = require('mqtt');
 var request = require('request');
 var ifttt = require('./ifttt.js');
-var db = require('./mongoutil.js');
+var low = require('lowdb');
+var FileSync = require('lowdb/adapters/FileSync');
+var adapter = new FileSync('db.json');
+var db = low(adapter);
 
 mqttutil = function(){
 
@@ -34,8 +37,9 @@ mqttutil = function(){
 
     this.onReceiveMessage =  function(topic, message){
         // Parse string to json
-
         var msg = JSON.parse(message);
+        console.log("Topic: " + topic);
+        console.log("Received mqtt message: " + msg);
         if(topic == "iot/switch")
             this.handleSwitch(msg);
         else if(topic == "iot/weight")
@@ -43,53 +47,28 @@ mqttutil = function(){
     }.bind(this);
 
     this.handleSwitch = function(msg){
+        var result = null;
         if(msg.trigger == 1){
-            // Get device information
-            var dbo = new db();
-            dbo.connect()
-            .then(function(){
-                return dbo.getDevice(msg.deviceId);
-            })
-            .then(
-                function(result){
-                    // Close database
-                    dbo.close();
-                    if(result.length > 0){
-                        value = result[0].deviceName;
-                        request.post(ifttt, {form:{value1:value}});
-                    }
-                }.bind(this)
-            )
-            .catch(function(err){
-                dbo.close();
-                console.log(err);
-            });
+            result = db.get("devices").find({deviceId : msg.deviceId}).value();
+            if(result != null){
+                value = result.itemName;
+                console.log("Sending request to IFTTT");
+                request.post(ifttt, {form:{value1:value}});
+            }
         }
-    }.bind(this);
+    };
 
     this.handleWeight = function(msg){
-        var dbo = new db();
-        dbo.connect()
-        .then(function(){
-            return dbo.getDevice(msg.deviceId);
-        })
-        .then(
-            function(result){
-                // Close database
-                dbo.close();
-                if(result.length > 0){
-                    value = result[0].deviceName;
-                    if(msg.weight < result[0].refillSetpoint){
-                        request.post(ifttt, {form:{value1:value}});
-                    }
-                }
-            }.bind(this)
-        )
-        .catch(function(err){
-            dbo.close();
-            console.log(err);
-        });
-    }.bind(this);
+        var result = null;
+        result = db.get("devices").find({deviceId : msg.deviceId}).value();
+        if(result != null){
+            if(msg.weight < result.refillSetpoint){
+                value = result.itemName;
+                console.log("Sending request to IFTTT");
+                request.post(ifttt, {form:{value1:value}});
+            }
+        }
+    };
 };
 
 module.exports = new mqttutil();

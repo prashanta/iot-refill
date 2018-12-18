@@ -4,17 +4,19 @@
 {{#if devices}}
     <table class="table">
         <tr>
-            <th>Device Name</th>
+            <th>Item Name</th>
             <th>Device Id</th>
             <th>Device Type</th>
             <th>Refill Setpoint</th>
+            <th></th>
         </tr>
         {{#each devices}}
             <tr>
-                <td>{{deviceName}}</td>
+                <td>{{itemName}}</td>
                 <td>{{deviceId}}</td>
                 <td>{{dType}}</td>
                 <td>{{refillSetpoint}}</td>
+                <td><a class="btn btn-danger" href="/remove?deviceId={{deviceId}}" role="button">Remove</a></td>
             </tr>
         {{/each}}
     </table>

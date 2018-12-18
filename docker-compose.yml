@@ -4,15 +4,11 @@ services:
     app:
         build: ./node
         container_name: "app"
+        depends_on:
+            - mqtt
         ports:
             - "80:80"
-    mongo:
-        image: mongo
-        container_name: "db"
-        expose:
-            - 27017
-        ports:
-            - 27017:27017
+
     mqtt:
         image: panuwitp/mosquitto-arm
         container_name: "mqtt"
