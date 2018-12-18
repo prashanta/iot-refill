@@ -6,6 +6,8 @@ services:
         container_name: "app"
         expose:
             - "80"
+         ports:
+             - "80:80"    
 #    mongo:
 #        image: mongo:latest
 #        container_name: "db"
