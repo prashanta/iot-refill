@@ -6,21 +6,21 @@ services:
         container_name: "app"
         ports:
             - "80:80"
-   mongo:
-       image: mongo:latest
-       container_name: "db"
-       expose:
-           - 27017
-       ports:
-           - 27017:27017
-       volumes:
-           - mongo-db:/data
-   mqtt:
-       image: panuwitp/mosquitto-arm
-       container_name: "mqtt"
-       expose:
-           - 1883
-       ports:
-         - "1883:1883"
+    mongo:
+        image: mongo:latest
+        container_name: "db"
+        expose:
+            - 27017
+        ports:
+            - 27017:27017
+        volumes:
+            - mongo-db:/data
+    mqtt:
+        image: panuwitp/mosquitto-arm
+        container_name: "mqtt"
+        expose:
+            - 1883
+        ports:
+            - "1883:1883"
 volumes:
- mongo-db:
+    mongo-db:
