@@ -1,0 +1,16 @@
+{
+  "devices": [
+    {
+      "itemName": "Tide",
+      "deviceId": "9001",
+      "dType": "weight",
+      "refillSetpoint": "100"
+    },
+    {
+      "itemName": "Milk",
+      "deviceId": "9002",
+      "dType": "button",
+      "refillSetpoint": ""
+    }
+  ]
+}
