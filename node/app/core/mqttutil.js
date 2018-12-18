@@ -39,7 +39,9 @@ mqttutil = function(){
         // Parse string to json
         var msg = JSON.parse(message);
         console.log("Topic: " + topic);
-        console.log("Received mqtt message: " + msg);
+        console.log("Received mqtt message: ");
+        console.log(msg);
+
         if(topic == "iot/switch")
             this.handleSwitch(msg);
         else if(topic == "iot/weight")
