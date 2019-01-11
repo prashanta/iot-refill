@@ -7,4 +7,4 @@ ESP-8266 are either deployed as switch or weight sensor. When the switch is pres
 The R. Pi is running a Node.js application and MQTT broker. This entire setup is deployed using Balena Cloud, as docker multi-container package.
 
 
-![](https://raw.githubusercontent.com/prashanta/printnode/master/node/public/images/sys.png)
+![](https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/sys.png)
