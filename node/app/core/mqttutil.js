@@ -67,7 +67,7 @@ mqttutil = function(){
         var result = null;
         result = db.get("devices").find({deviceId : msg.deviceId}).value();
         if(result != null){
-            if(msg.weight < result.refillSetpoint){
+            if(parseInt(msg.weight) < parseInt(result.refillSetpoint)){
                 value = result.itemName;
                 console.log("Sending request to IFTTT");
                 request.post(ifttt, {form:{value1:value}});
