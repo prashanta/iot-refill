@@ -7,8 +7,20 @@
       "refillSetpoint": "100"
     },
     {
+      "itemName": "Sugar",
+      "deviceId": "12",
+      "dType": "button",
+      "refillSetpoint": ""
+    },
+    {
+      "itemName": "Coffee",
+      "deviceId": "13",
+      "dType": "button",
+      "refillSetpoint": ""
+    },
+    {
       "itemName": "Milk",
-      "deviceId": "9002",
+      "deviceId": "14",
       "dType": "button",
       "refillSetpoint": ""
     }

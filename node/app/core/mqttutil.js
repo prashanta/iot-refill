@@ -7,8 +7,7 @@ var request = require('request');
 var ifttt = require('./ifttt.js');
 var low = require('lowdb');
 var FileSync = require('lowdb/adapters/FileSync');
-var adapter = new FileSync('db.json');
-var db = low(adapter);
+
 
 mqttutil = function(){
 
@@ -49,6 +48,8 @@ mqttutil = function(){
     }.bind(this);
 
     this.handleSwitch = function(msg){
+        var adapter = new FileSync('db.json');
+        var db = low(adapter);
         var result = null;
         if(msg.trigger == 1){
             result = db.get("devices").find({deviceId : msg.deviceId}).value();
@@ -61,6 +62,8 @@ mqttutil = function(){
     };
 
     this.handleWeight = function(msg){
+        var adapter = new FileSync('db.json');
+        var db = low(adapter);
         var result = null;
         result = db.get("devices").find({deviceId : msg.deviceId}).value();
         if(result != null){

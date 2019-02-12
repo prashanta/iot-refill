@@ -1,6 +1,5 @@
 FROM resin/raspberry-pi-node:6-slim
 
-
 WORKDIR /usr/src/app
 
 COPY package.json package.json

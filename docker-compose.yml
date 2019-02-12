@@ -8,7 +8,6 @@ services:
             - mqtt
         ports:
             - "80:80"
-
     mqtt:
         image: panuwitp/mosquitto-arm
         container_name: "mqtt"
