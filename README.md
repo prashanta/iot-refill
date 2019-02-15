@@ -1,10 +1,10 @@
 ## IoT Replenish Application
 
-This is an IoT application comprising of Raspberry Pi and ESP-8266, which adds items that are in running low  to a "Shopping List" on iOS Reminder application.
+This is an IoT project comprising of Raspberry Pi as a gateway and NodeMCUs as event devices. The objective of this project is to add items that are running low to a "Shopping List" on iOS Reminder application.
 
-ESP-8266 are either deployed as switch or weight sensor. When the switch is pressed or weight changes, it sends a MQTT message to a broker running on Raspberry Pi. RPi is also running a node.js application that is acting like a MQTT client and receives all MQTT messages. It examins the message and determines whether the item needs to be added to shopping list.
+NodeMCUs are either deployed with either with a switch or load cell. When the switch is pressed or weight changes, it sends a MQTT message to MQTT broker running on Raspberry Pi. Each event device represents item that can be added to shopping list.
 
-The R. Pi is running a Node.js application and MQTT broker. This entire setup is deployed using Balena Cloud, as docker multi-container package.
+Raspberry Pi is running a Node.js application and MQTT broker (Mosquitto). The node.js application comprises of web applcation (for provisioning event devices) and a MQTT client that listens to MQTT messages. It examins MQTT payloads and determines if item needs to be added to shopping list. Both the Node.js application and MQTT broker are runnning in their respective docker containers and run as multi-container docker application on Raspberry Pi. [Balena Cloud](https://www.balena.io/cloud) has been used to deploy the multi-container docker application to Raspberry Pi.
 
 
 ![](https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/sys.png)
