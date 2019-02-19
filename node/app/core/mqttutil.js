@@ -4,7 +4,6 @@ A module that provides MQTT functionalities.
 
 var mqtt    = require('mqtt');
 var request = require('request');
-var ifttt = require('./ifttt.js');
 var low = require('lowdb');
 var FileSync = require('lowdb/adapters/FileSync');
 
@@ -56,7 +55,7 @@ mqttutil = function(){
             if(result != null){
                 value = result.itemName;
                 console.log("Sending request to IFTTT");
-                request.post(ifttt, {form:{value1:value}});
+                request.post(this.ifttt, {form:{value1:value}});
             }
         }
     };
@@ -70,7 +69,7 @@ mqttutil = function(){
             if(parseInt(msg.weight) < parseInt(result.refillSetpoint)){
                 value = result.itemName;
                 console.log("Sending request to IFTTT");
-                request.post(ifttt, {form:{value1:value}});
+                request.post(this.ifttt, {form:{value1:value}});
             }
         }
     };

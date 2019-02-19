@@ -2,23 +2,23 @@
 <hr>
 <form action="/newdevice" method="get">
   <div class="form-group row">
-    <label for="iname" class="col-sm-2 col-form-label">Item Name</label>
-    <div class="col-sm-10">
+    <label for="iname" class="col-sm-3 col-form-label" style="text-align: right;">Item Name</label>
+    <div class="col-sm-9">
       <input type="text" class="form-control" id="iname" name="itemName">
     </div>
   </div>
 
   <div class="form-group row">
-    <label for="did" class="col-sm-2 col-form-label">Device Id</label>
-    <div class="col-sm-10">
+    <label for="did" class="col-sm-3 col-form-label" style="text-align: right;">Device Id</label>
+    <div class="col-sm-9">
       <input type="text" class="form-control" id="did" name="deviceId">
     </div>
   </div>
 
   <fieldset class="form-group">
     <div class="row">
-      <legend class="col-form-label col-sm-2 pt-0">Device Type</legend>
-      <div class="col-sm-10">
+      <legend class="col-form-label col-sm-3 pt-0" style="text-align: right;">Device Type</legend>
+      <div class="col-sm-9">
         <div class="form-check">
           <input class="form-check-input" type="radio" name="dType" id="gridRadios1" value="button" checked  onclick="hideOptions();">
           <label class="form-check-label" for="gridRadios1">
@@ -35,13 +35,14 @@
     </div>
   </fieldset>
   <div class="form-group row" id="weightOption">
-    <label for="rsp" class="col-sm-2 col-form-label">Refill Weight Setpoint</label>
-    <div class="col-sm-10">
+    <label for="rsp" class="col-sm-3 col-form-label" style="text-align: right;">Refill Weight Setpoint (grams)</label>
+    <div class="col-sm-9">
       <input type="text" class="form-control" id="rsp" name="refillSetpoint">
     </div>
   </div>
   <div class="form-group row">
-    <div class="col-sm-10">
+    <div class="col-sm-3"></div>  
+    <div class="col-sm-9">
       <button type="submit" class="btn btn-primary">Add</button>
     </div>
   </div>

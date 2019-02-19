@@ -1,12 +1,6 @@
 {
   "devices": [
     {
-      "itemName": "Tide",
-      "deviceId": "9001",
-      "dType": "weight",
-      "refillSetpoint": "100"
-    },
-    {
       "itemName": "Sugar",
       "deviceId": "12",
       "dType": "button",
@@ -15,12 +9,6 @@
     {
       "itemName": "Coffee",
       "deviceId": "13",
-      "dType": "button",
-      "refillSetpoint": ""
-    },
-    {
-      "itemName": "Milk",
-      "deviceId": "14",
       "dType": "button",
       "refillSetpoint": ""
     }

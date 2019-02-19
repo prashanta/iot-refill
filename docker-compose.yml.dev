@@ -13,7 +13,7 @@ services:
             - 80:80
         command: npm run dev
         environment:
-            - ifttt=bG0g3ikltIAd46otHADit0
+            - ifttt=insert_key_here
     mqtt:
         image: eclipse-mosquitto:latest
         container_name: "mqtt"
