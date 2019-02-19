@@ -11,7 +11,7 @@ Raspberry Pi is running a Node.js application along with a MQTT broker ([Mosquit
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/setup.png">
+  <img width="600px" height="600px" src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/setup.png">
 </p>
 
 
