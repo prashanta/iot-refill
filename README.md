@@ -1,12 +1,14 @@
 # IoT Replenish Application
 
-This is an IoT project comprising of Raspberry Pi as a gateway and NodeMCUs as agent devices to log events. The objective of this project is to add items that are running low to a "Shopping List" in iOS Reminder application.
+This is an IoT project comprising of Raspberry Pi as a gateway and NodeMCUs as agent devices to log events. Objective of this project is to add items that are running low to a "Shopping List" in iOS Reminder application.
 
 NodeMCUs are deployed either with a switch or load cell. When switch is pressed or weight changes, it sends a MQTT message to broker running on Raspberry Pi. Each agent device represents an item that can be added to shopping list.
 
-Raspberry Pi is running a Node.js application along with a MQTT broker (Mosquitto). The node.js application comprises of web applcation (for provisioning event devices) and a MQTT client that subscribes topics from agent devices. It examins MQTT payloads and determines if an item needs to be added to shopping list. Both the Node.js application and MQTT broker are runnning in their respective docker containers and run as multi-container docker application on Raspberry Pi. [Balena Cloud](https://www.balena.io/cloud) has been used to deploy the multi-container docker application to Raspberry Pi.
+Raspberry Pi is running a Node.js application along with a MQTT broker ([Mosquitto](https://mosquitto.org)). Node.js application comprises of web application (for provisioning event devices) and MQTT client that subscribes to topics from agent devices. It examines MQTT payloads and determines if an item needs to be added to shopping list. Both Node.js application and MQTT broker are running in their respective docker containers and entire project is run as multi-container docker application on Raspberry Pi. [Balena Cloud](https://www.balena.io/cloud) has been used to deploy the multi-container docker application to Raspberry Pi.
 
-![](https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/sys.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/sys.png">
+</p>
 
 
 
@@ -70,10 +72,13 @@ Once the application is running follow these steps:
 
 2. Click 'Add Device' to add either a switch or weight based device.
 
-![](https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/add_device_switch.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/add_device_switch.png">
+</p>
 
-
-![](https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/add_device_weight.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/add_device_weight.png">
+</p>
 
 ## Deploying Agent Devices
 
@@ -87,7 +92,7 @@ Topic: iot/switch
 Message: {"deviceId":"10", "trigger":"1"}
 ```
 
-1. For weight based agent device send:
+2. For weight based agent device send:
 ```
 Topic: iot/weight
 Message: {"deviceId":"11", "weight":"90"}
