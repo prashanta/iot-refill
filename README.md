@@ -11,10 +11,8 @@ Raspberry Pi is running a Node.js application along with a MQTT broker ([Mosquit
 </p>
 
 <p align="center">
-  <img width="600px" height="600px" src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/setup.png">
+  <img width="450px" height="450px" src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/setup.png">
 </p>
-
-
 
 ## How to Run?
 
@@ -103,3 +101,11 @@ Message: {"deviceId":"11", "weight":"90"}
 ```
 
 Once these messages are received by Raspberry Pi, it will send out IFTTT web request to add respective items to shopping list on iOS Reminders application.
+
+## Demo
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/demo.gif">
+</p>
+
+For HD video click [here](https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/demo.mov)
