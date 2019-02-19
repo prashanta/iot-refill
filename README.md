@@ -10,6 +10,10 @@ Raspberry Pi is running a Node.js application along with a MQTT broker ([Mosquit
   <img src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/sys.png">
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/setup.png">
+</p>
+
 
 
 ## How to Run?
