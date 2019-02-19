@@ -6,7 +6,7 @@ NodeMCUs are deployed either with a switch or load cell. When switch is pressed 
 
 Raspberry Pi is running a Node.js application along with a MQTT broker (Mosquitto). The node.js application comprises of web applcation (for provisioning event devices) and a MQTT client that subscribes topics from agent devices. It examins MQTT payloads and determines if an item needs to be added to shopping list. Both the Node.js application and MQTT broker are runnning in their respective docker containers and run as multi-container docker application on Raspberry Pi. [Balena Cloud](https://www.balena.io/cloud) has been used to deploy the multi-container docker application to Raspberry Pi.
 
-![](https://raw.githubusercontent.com/prashanta/printnode/master/node/public/images/sys.png)
+![](https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/sys.png)
 
 
 
@@ -70,10 +70,10 @@ Once the application is running follow these steps:
 
 2. Click 'Add Device' to add either a switch or weight based device.
 
-![](https://raw.githubusercontent.com/prashanta/printnode/master/node/public/images/add_device_switch.png)
+![](https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/add_device_switch.png)
 
 
-![](https://raw.githubusercontent.com/prashanta/printnode/master/node/public/images/add_device_weight.png)
+![](https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/add_device_weight.png)
 
 ## Deploying Agent Devices
 
