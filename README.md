@@ -2,16 +2,16 @@
 
 This is an IoT project comprising of Raspberry Pi as a gateway and NodeMCUs as agent devices to log events. Objective of this project is to add items that are running low to a "Shopping List" in iOS Reminder application.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/sys.png">
+</p>
+
 NodeMCUs are deployed either with a switch or load cell. When switch is pressed or weight changes, it sends a MQTT message to broker running on Raspberry Pi. Each agent device represents an item that can be added to shopping list.
 
 Raspberry Pi is running a Node.js application along with a MQTT broker ([Mosquitto](https://mosquitto.org)). Node.js application comprises of web application (for provisioning event devices) and MQTT client that subscribes to topics from agent devices. It examines MQTT payloads and determines if an item needs to be added to shopping list. Both Node.js application and MQTT broker are running in their respective docker containers and entire project is run as multi-container docker application on Raspberry Pi. [Balena Cloud](https://www.balena.io/cloud) has been used to deploy the multi-container docker application to Raspberry Pi.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/arch.png">
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/prashanta/iot-refill/master/node/public/images/sys.png">
 </p>
 
 <p align="center">
